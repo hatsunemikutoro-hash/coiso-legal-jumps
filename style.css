@@ -1,0 +1,51 @@
+body {
+  background-image: url('https://frutigeraeroarchive.org/images/wallpapers/asadal_stock/asadal_stock_44.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: transparent;
+  animation: flutuar 2s ease-in-out infinite;
+}
+
+img {
+  image-rendering: pixelated;
+  transition: transform 0.3s ease;
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+#carta:hover {
+  transform: scale(1.1);
+}
+
+.secreta {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.secreta.ativa {
+  animation: aparecerPulando 0.8s ease-out forwards;
+}
+
+@keyframes aparecerPulando {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+  40%  { opacity: 1; transform: translate(-50%, -80%) scale(1.2); }
+  70%  { opacity: 1; transform: translate(-50%, -40%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
